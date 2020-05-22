@@ -1,4 +1,4 @@
-package com.company;
+package eu.pstdio;
 
 import java.util.*;
 import java.util.ArrayList;
