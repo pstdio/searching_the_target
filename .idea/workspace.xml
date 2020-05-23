@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dee79749-41d5-471d-8ea4-aea3c5054b8a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pacman/com/company/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pacman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/searching_the_target.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eu/pstdio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/searching_the_target/eu/pstdio/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/searching_the_target/eu/pstdio/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eu/pstdio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eu/pstdio/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +19,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

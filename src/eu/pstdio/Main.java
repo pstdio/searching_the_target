@@ -144,10 +144,12 @@ public class Main {
         List tmpRout2 = new ArrayList<>(rout);
         tmpRout2.add(from);
 
-        for (Integer child : vertices[from]) {
+        for (int i = 0; i < exists.length; i++)
+            exists[i] = 0;
 
-            for (int i = 0; i < exists.length; i++)
-                exists[i] = 0;
+        exists[from] = 1;
+
+        for (Integer child : vertices[from]) {
 
             if (setRout(tmpRout2, child, to)) {
 
@@ -176,11 +178,11 @@ public class Main {
             breakStr += '\n';
         }
 
-        for(int i = 5; i > 0; i-- ) {
+        for (int i = 5; i > 0; i--) {
             System.out.print(breakStr);
-            System.out.println(ANSI_GREEN + "Test will starts for: " + i + ANSI_RESET);
-            if(i > 1)
-                TimeUnit.SECONDS.sleep(1);
+            System.out.println(ANSI_GREEN + "Tests will starts for: " + i + ANSI_RESET);
+
+            TimeUnit.SECONDS.sleep(1);
         }
 
         System.out.print(breakStr);
@@ -188,6 +190,7 @@ public class Main {
         setVertices();
         int idTargets[] = new int[]{26, 13, 13, 26, 9};
         int idStarts[] = new int[]{19, 19, 26, 13, 19};
+        long milisStart, milisEnd;
 
         for (int ids = 0; ids < idTargets.length; ids++) {
 
@@ -195,7 +198,14 @@ public class Main {
 
             TimeUnit.SECONDS.sleep(2);
 
+            milisStart = System.currentTimeMillis();
+            System.out.println("Test Starts at: " + milisStart);
             startRout(idStarts[ids], idTargets[ids]);
+            milisEnd = System.currentTimeMillis();
+
+            System.out.println("Rout generated at: " + milisEnd + ". It took " + (milisEnd - milisStart) + " milliseconds.");
+
+            TimeUnit.SECONDS.sleep(5);
 
             for (int idR = 0; idR < rout.size(); idR++) {
 
@@ -204,7 +214,7 @@ public class Main {
                 System.out.print("______\n");
 
                 for (int id = 0; id < array.length; id++) {
-                    if(id % rowLen == 0 ){
+                    if (id % rowLen == 0) {
                         System.out.print("1");
                     }
 
@@ -220,7 +230,7 @@ public class Main {
                         }
                     }
 
-                    if (id % rowLen == 4 ) {
+                    if (id % rowLen == 4) {
                         System.out.print("1\n");
                     }
 
