@@ -211,7 +211,7 @@ public class Main {
 
                 System.out.print(breakStr);
 
-                System.out.print("______\n");
+                System.out.print("_______\n");
 
                 for (int id = 0; id < array.length; id++) {
                     if (id % rowLen == 0) {
@@ -236,7 +236,7 @@ public class Main {
 
                 }
 
-                System.out.print("------\n");
+                System.out.print("-------\n");
 
                 TimeUnit.SECONDS.sleep(1);
             }
