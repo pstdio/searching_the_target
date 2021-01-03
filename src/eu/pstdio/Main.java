@@ -35,7 +35,7 @@ public class Main {
 
     private static char floor = ' ';
 
-    private static List<Integer>[] vertices = new ArrayList[array.length];
+    private static List<Integer>[] edges = new ArrayList[array.length];
     private static List<Integer> rout = new ArrayList<>();
 
     //zwraca id wierzcholka po lewej
@@ -73,23 +73,23 @@ public class Main {
         }
     }
 
-    private static void setVertices() {
+    private static void setEdges() {
         int left, right, upper, lower;
 
         for (int id = 0; id < array.length; id++) {
             if (array[id] == floor) {
 
-                vertices[id] = new ArrayList<>();
+                edges[id] = new ArrayList<>();
 
                 left = getLeftElem(id);
                 right = getRightElem(id);
                 upper = getUpperElem(id);
                 lower = getLowerElem(id);
 
-                setElem(vertices[id], left);
-                setElem(vertices[id], right);
-                setElem(vertices[id], upper);
-                setElem(vertices[id], lower);
+                setElem(edges[id], left);
+                setElem(edges[id], right);
+                setElem(edges[id], upper);
+                setElem(edges[id], lower);
 
             }
         }
@@ -107,7 +107,7 @@ public class Main {
             branchTmp = branchTmp2;
             out = true;
         } else {
-            for (Integer child : vertices[from]) {
+            for (Integer child : edges[from]) {
 
                 if (exists[child] == 0) {
 
@@ -149,7 +149,7 @@ public class Main {
 
         exists[from] = 1;
 
-        for (Integer child : vertices[from]) {
+        for (Integer child : edges[from]) {
 
             if (setRout(tmpRout2, child, to)) {
 
@@ -187,7 +187,7 @@ public class Main {
 
         System.out.print(breakStr);
 
-        setVertices();
+        setEdges();
         int idTargets[] = new int[]{26, 13, 13, 26, 9};
         int idStarts[] = new int[]{19, 19, 26, 13, 19};
         long milisStart, milisEnd;
