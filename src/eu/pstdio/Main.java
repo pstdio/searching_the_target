@@ -96,7 +96,7 @@ public class Main {
     }
 
     //zwraca liste wierzcholkow przez ktore trzeba przejsc
-    public static boolean setRout(List<Integer> branch, Integer from, Integer to) {
+    public static boolean setRoute(List<Integer> branch, Integer from, Integer to) {
         List<Integer> branchTmp = new ArrayList<>();
         List<Integer> branchTmp2 = new ArrayList<>(branch);
         branchTmp2.add(from);
@@ -111,7 +111,7 @@ public class Main {
 
                 if (exists[child] == 0) {
 
-                    if (setRout(branchTmp2, child, to)) {
+                    if (setRoute(branchTmp2, child, to)) {
                         out = true;
                         if (branchTmp.isEmpty()) {
                             branchTmp = branchTmp2;
@@ -138,7 +138,7 @@ public class Main {
         return out;
     }
 
-    public static void startRout(Integer from, Integer to) {
+    public static void startRoute(Integer from, Integer to) {
         rout = new ArrayList<>();
         List tmpRout = new ArrayList<>();
         List tmpRout2 = new ArrayList<>(rout);
@@ -151,7 +151,7 @@ public class Main {
 
         for (Integer child : edges[from]) {
 
-            if (setRout(tmpRout2, child, to)) {
+            if (setRoute(tmpRout2, child, to)) {
 
                 if (tmpRout.isEmpty()) {
                     tmpRout = tmpRout2;
@@ -200,7 +200,7 @@ public class Main {
 
             milisStart = System.currentTimeMillis();
             System.out.println("Test Starts at: " + milisStart);
-            startRout(idStarts[ids], idTargets[ids]);
+            startRoute(idStarts[ids], idTargets[ids]);
             milisEnd = System.currentTimeMillis();
 
             System.out.println("Rout generated at: " + milisEnd + ". It took " + (milisEnd - milisStart) + " milliseconds.");
