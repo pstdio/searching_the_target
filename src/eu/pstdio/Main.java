@@ -140,9 +140,9 @@ public class Main {
 
     public static void startRoute(Integer from, Integer to) {
         rout = new ArrayList<>();
-        List tmpRout = new ArrayList<>();
-        List tmpRout2 = new ArrayList<>(rout);
-        tmpRout2.add(from);
+        List tmpRoute = new ArrayList<>();
+        List tmpRoute2 = new ArrayList<>(rout);
+        tmpRoute2.add(from);
 
         for (int i = 0; i < exists.length; i++)
             exists[i] = 0;
@@ -151,22 +151,22 @@ public class Main {
 
         for (Integer child : edges[from]) {
 
-            if (setRoute(tmpRout2, child, to)) {
+            if (setRoute(tmpRoute2, child, to)) {
 
-                if (tmpRout.isEmpty()) {
-                    tmpRout = tmpRout2;
-                } else if (tmpRout.size() > tmpRout2.size()) {
-                    tmpRout = tmpRout2;
+                if (tmpRoute.isEmpty()) {
+                    tmpRoute = tmpRoute2;
+                } else if (tmpRoute.size() > tmpRoute2.size()) {
+                    tmpRoute = tmpRoute2;
                 }
 
-                tmpRout2 = new ArrayList<>(rout);
-                tmpRout2.add(from);
+                tmpRoute2 = new ArrayList<>(rout);
+                tmpRoute2.add(from);
 
             }
 
         }
 
-        rout = tmpRout;
+        rout = tmpRoute;
 
     }
 
